@@ -1,6 +1,6 @@
 const { getProfile } = require('../middleware/getProfile');
 
-const jobsService = require('../services/jobs');
+const { jobsService } = require('../services');
 
 const setup = (app) => {
         /**

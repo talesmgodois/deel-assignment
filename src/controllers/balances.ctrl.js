@@ -1,5 +1,5 @@
 const { getProfile } = require('../middleware/getProfile');
-const balancesService = require('../services/balances');
+const { balancesService } = require('../services');
 const { validateSchema } = require('./schemas/validateSchema');
 const { balanceSepositSchema } = require('./schemas/balances');
 

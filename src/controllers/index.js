@@ -10,4 +10,3 @@ function getFiles (pattern) {
 module.exports = {
     controllers: getFiles('.ctrl.js'),
 };
-

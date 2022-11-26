@@ -1,5 +1,5 @@
 const { getProfile } = require('../middleware/getProfile');
-const adminService = require('../services/admin');
+const { adminService } = require('../services');
 const { validateSchema } = require('./schemas/validateSchema');
 const { bestProfessionSchema, bestClientsSchema } = require('./schemas/admin');
 

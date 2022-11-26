@@ -1,5 +1,5 @@
 const {QueryTypes} = require('sequelize');
-const { sequelize } = require("../../model");
+const { sequelize } = require("../model");
 
 
 const getBestProfessionByDate = async ({startDate, endDate}) => {

@@ -1,6 +1,6 @@
 
 const { Op, QueryTypes } = require("sequelize");
-const { sequelize } = require('../../model');
+const { sequelize } = require('../model');
 
 const findUnpaid = ({ req, profileId }) => {
     return find({req, profileId, paid: true, statuses:['in_progress']});

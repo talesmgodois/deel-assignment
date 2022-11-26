@@ -1,5 +1,5 @@
 const { getProfile } = require('../middleware/getProfile');
-const contractsService = require('../services/contracts');
+const { contractsService } = require('../services');
 const { contractByIdSchema } = require('./schemas/contracts');
 const { validateSchema } = require('./schemas/validateSchema');
 
