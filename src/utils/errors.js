@@ -23,8 +23,6 @@ class ConflictError extends HttpError {
     }
 }
 
-
-
 module.exports = {
     HttpError,
     ValidationError,
