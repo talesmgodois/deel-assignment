@@ -3,6 +3,10 @@ const { app } = require('../src/app');
 const fs = require('fs');
 
 async function payJob () {
+    const dir = './log/payments';
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir, { recursive: true });
+    }
     const calls = 1000;
     const jobIds = [29, 31,33];
     let cursor = 0;

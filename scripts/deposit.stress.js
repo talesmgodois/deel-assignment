@@ -3,6 +3,10 @@ const { app } = require('../src/app');
 const fs = require('fs');
 
 async function deposits () {
+    const dir = './log/deposits';
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir, { recursive: true });
+    }
     const calls = 1000;
     const profileIds = [1,2,3,4,5,6,7,8,9];
     let cursor = 0;
