@@ -19,7 +19,8 @@
     "lint": "eslint",
     "scripts:seed": "node ./scripts/seedDb.js",
     "scripts:deposit": "node ./scripts/deposit.js",
-    "scripts:deposit:stress": "node ./scripts/deposit.stress.js"
+    "scripts:deposit:stress": "node ./scripts/deposit.stress.js",
+    "scripts:pay:stress": "node ./scripts/pay.stress.js"
   },
   "devDependencies": {
     "concurrently": "4.1.0",
