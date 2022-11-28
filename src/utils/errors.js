@@ -11,9 +11,9 @@ class ValidationError extends HttpError {
     }
 }
 
-class PreConditionFailedError extends HttpError {
+class UnprocessableEntity extends HttpError {
     constructor(message) {
-        super(message, 412)
+        super(message, 422)
     }
 }
 
@@ -26,6 +26,6 @@ class ConflictError extends HttpError {
 module.exports = {
     HttpError,
     ValidationError,
-    PreConditionFailedError,
+    UnprocessableEntity,
     ConflictError,
 }

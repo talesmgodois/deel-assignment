@@ -10,6 +10,7 @@
     "express-async-errors": "^3.1.1",
     "sequelize": "^6.3.4",
     "sqlite3": "^5.1.2",
+    "uuid": "^9.0.0",
     "yup": "^0.32.11"
   },
   "scripts": {
@@ -17,7 +18,8 @@
     "test": "jest --coverage",
     "lint": "eslint",
     "scripts:seed": "node ./scripts/seedDb.js",
-    "scripts:stress": ""
+    "scripts:deposit": "node ./scripts/deposit.js",
+    "scripts:deposit:stress": "node ./scripts/deposit.stress.js"
   },
   "devDependencies": {
     "concurrently": "4.1.0",

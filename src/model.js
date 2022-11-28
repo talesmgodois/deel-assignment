@@ -29,7 +29,8 @@ Profile.init(
   },
   {
     sequelize,
-    modelName: 'Profile'
+    modelName: 'Profile',
+    version: true,
   }
 );
 
@@ -75,6 +76,36 @@ Job.init(
   }
 );
 
+class Ledger extends Sequelize.Model {}
+Ledger.init({
+  type: {
+    // This enum could have also withdraw which is not part of the exercize
+    type: Sequelize.ENUM('deposit', 'payment'),
+    allowNull: false,
+  },
+  value: {
+    type: Sequelize.DECIMAL(12,2),
+    allowNull: false
+  },
+  profileReceiverId: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  senderId: {
+    type: Sequelize.INTEGER,
+    allowNull: true,
+  }
+}, {
+  sequelize,
+  modelName: 'Ledger',
+  version: true,
+  hooks: {
+    beforeUpdate: () => {
+      throw new Error('Update disabled for this row')
+    }
+  }
+})
+
 Profile.hasMany(Contract, {as :'Contractor',foreignKey:'ContractorId'})
 Contract.belongsTo(Profile, {as: 'Contractor'})
 Profile.hasMany(Contract, {as : 'Client', foreignKey:'ClientId'})
@@ -82,9 +113,11 @@ Contract.belongsTo(Profile, {as: 'Client'})
 Contract.hasMany(Job)
 Job.belongsTo(Contract)
 
+
 module.exports = {
   sequelize,
   Profile,
   Contract,
   Job
 };
+

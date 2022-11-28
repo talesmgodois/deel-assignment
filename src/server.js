@@ -1,5 +1,4 @@
 const { app } = require('./app');
-
 init();
 
 async function init() {
